@@ -14,9 +14,7 @@ import java.util.UUID;
 
 @Entity
 @Getter
-@Builder
 @NoArgsConstructor
-@AllArgsConstructor
 public class Product {
     @Id
     private UUID productId;
@@ -27,7 +25,7 @@ public class Product {
     private String description;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
+    @Builder
     public Product(UUID productId, String productName, Category category, long price) {
         this.productId = productId;
         this.productName = productName;
