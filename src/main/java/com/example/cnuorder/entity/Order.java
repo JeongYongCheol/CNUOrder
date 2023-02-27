@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 @Entity
 @Getter
 @NoArgsConstructor
+@Table(name = "orders")
 public class Order {
     @Id
     private UUID orderId;
