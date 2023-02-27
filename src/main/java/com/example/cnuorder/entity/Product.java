@@ -26,11 +26,12 @@ public class Product {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     @Builder
-    public Product(UUID productId, String productName, Category category, long price) {
+    public Product(UUID productId, String productName, Category category, long price, String description) {
         this.productId = productId;
         this.productName = productName;
         this.category = category;
         this.price = price;
+        this.description = description;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
