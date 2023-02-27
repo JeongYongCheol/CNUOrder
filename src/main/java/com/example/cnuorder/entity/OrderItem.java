@@ -1,8 +1,7 @@
 package com.example.cnuorder.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -23,6 +22,7 @@ public class OrderItem {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    @Builder
     public OrderItem(UUID orderId, UUID productId, Category category, long price, int quantity) {
         this.orderId = orderId;
         this.productId = productId;
@@ -33,5 +33,28 @@ public class OrderItem {
         this.updatedAt = LocalDateTime.now();
     }
 
+    public void setOrderId(UUID orderId) {
+        this.orderId = orderId;
+        this.updatedAt = LocalDateTime.now();
+    }
 
+    public void setProductId(UUID productId) {
+        this.productId = productId;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void setPrice(long price) {
+        this.price = price;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+        this.updatedAt = LocalDateTime.now();
+    }
 }
